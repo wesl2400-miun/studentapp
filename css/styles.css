@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #333;
+    background-color: #f4f3f3;
+}
+
+#mainheader {
+    height: 50px;
+    line-height: 50px;
+    padding-bottom: 4px;
+    background-color: #d04900;
+    color: #fff;
+}
+
+#mainheader h1 {
+    margin: 0 0 0 1em;
+    float: left;
+    cursor: pointer;
+}
+
+#mainheader a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.contain {
+    width: 96%;
+    padding: 2%;
+    margin: 1em auto 1em auto;
+    max-width: 960px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: .3em;
+}
+
+#mainnavlist {
+    font-size: 0.825em;
+    padding-left: 1.5em;
+}
+
+#mainnavlist li {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+#mainnavlist li:hover {
+    text-decoration: underline;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+.spacer {
+    margin: 10px 0 10px 0;
+}
+
+.error {
+    color: red;
+}
+
+.message {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+footer {
+    clear: both;
+    padding: 2em 0 0 0;
+    font-size: 0.825em;
+    color: #666;
+    text-align: center;
+}
+
+button, .btn {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 1em 0 1em;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: .25rem;
+    border: 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #D07E00;
+}
+
+button:hover, .btn:hover {
+    background-color: #802D00;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    padding: 5px;
+    border-radius: .25rem;
+    border: 1px solid #ccc;
+    height: 25px;
+    margin-left: 5px;
+    width: 60%;
+    margin-bottom: 1em;
+}
+
+select {
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#new {
+    margin: 2em 0 2em 0;
+}
+
+#message {
+    font-weight: bold;
+    color: red;
+    margin-left: 1em;
+}
+
+#preview .card {
+    background-color: #ffffff;
+    width: 90%;
+    padding: 2em 1em 2em 1em;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+#preview h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.card-divider {
+    height: 2px;
+    background-color: #d04900;
+    margin: 10px 0;
+}
+
+.card-info {
+    margin-bottom: 0.5em;
+}
+
+#preview .card::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-image: url('miun-logo.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#errorlist {
+    color: red;
+    font-weight: bold;
+}
+
+@media only screen and (max-width : 800px) {
+    body {
+        background-color: #fff;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    #mainheader {
+        height: auto;
+        line-height: auto;
+        padding-bottom: 0;
+    }
+
+    #mainheader h1 {
+        float: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 90%;
+    }
+}
