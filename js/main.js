@@ -97,7 +97,7 @@ window.addEventListener('load', () => {
     save = (student) => {
       const id = crypto.randomUUID();
       const json = JSON.stringify(student);
-      localStorage.setItem(id, `ID: ${id} ${json}`);
+      localStorage.setItem(id, json);
       this._cache(id);
     } 
 
@@ -211,6 +211,7 @@ window.addEventListener('load', () => {
     constructor(history, records, resHist) {
       this._history = history;
       this._records = records;
+      this._records.style = 'list-style: none; padding: 0; margin: 0.2rem, 0;';
       this._resHist = resHist;
     }
 
@@ -222,10 +223,30 @@ window.addEventListener('load', () => {
       })
     }
 
-    // Skapa en ny tagg av typpen listobjekt baserat på arkivaliedatan
-    _render = (content) => {
-      const record = newTag('li', this._records);
-      record.textContent = content;
+    // Definiera en ny HTML tagg
+    _addTag = (type, parent, text) => {
+      const tag = newTag(type, parent);
+      tag.textContent = text;
+    }
+
+    // Stilisera ett listobjekt
+    _beautifyLi = (tag, font) => {
+      tag.style = 'list-style: none;' +
+      'border-top: gray 1px solid;' +
+      'padding: 0.5rem 0;' +
+      'margin: 0.3rem;' +
+      `font-family: '${font}';`;
+    }
+
+    // Skapa ett listobjekt baserat på arkivaliedatan
+    _render = (record) => {
+      const archive = JSON.parse(record);
+      const { name, email, phone, font } = archive;
+      const item = newTag('li', this._records);
+      this._beautifyLi(item, font);
+      this._addTag('h4', item, name);
+      this._addTag('p', item, `E-post: ${email}`);
+      this._addTag('p', item, `Telefon ${phone}`);
     }
 
     // uppdatera HTML-taggen för arkivalier genom att rensa den och återskapa från det uppdaterade minnet
@@ -233,7 +254,7 @@ window.addEventListener('load', () => {
       this._records.innerHTML = '';
       const records = memory.records();
       records.forEach(record => {
-        this._render(record)
+        this._render(record);
       });
     }
   }
