@@ -244,7 +244,7 @@ window.addEventListener('load', () => {
       const { name, email, phone, font } = archive;
       const item = newTag('li', this._records);
       this._beautifyLi(item, font);
-      this._addTag('h4', item, name);
+      this._addTag('h3', item, name);
       this._addTag('p', item, `E-post: ${email}`);
       this._addTag('p', item, `Telefon ${phone}`);
     }
